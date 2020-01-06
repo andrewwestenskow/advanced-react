@@ -4,13 +4,10 @@ import StyleHOC from './StyleHOC'
 const Toggle = ({ style, children }) => {
   const [on, setOn] = useState(false)
   return (
-    <div>
+    <div style={style}>
       {on && children}
-      <button 
-        onClick={() => setOn(!on)} 
-        style={style}
-      >
-      Show/Hide
+      <button onClick={() => setOn(!on)} style={style}>
+        Show/Hide
       </button>
     </div>
   )

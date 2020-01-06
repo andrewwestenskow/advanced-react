@@ -3,26 +3,27 @@ import React from 'react'
 const styles = {
   default: {
     color: '#0f0f0f',
-    background: 'linear-gradient(to bottom, #98989877, #d8d8d8 65%, #ababab33 100%',
+    background:
+      'linear-gradient(to bottom, #98989877, #d8d8d8 65%, #ababab33 100%',
     borderRadius: '4px',
     padding: '.4rem 1rem',
     border: '1px solid #d8d8d8ab',
     outline: 'none',
-    fontSize: '1rem'
+    fontSize: '1rem',
   },
-  disabled: {
-    opacity: '.5'
-  }
+
+  darkMode: {
+    background: 'linear-gradient(to bottom, #000000 ,#434343 50%',
+    color: 'white',
+  },
 }
 
-const ComplexButton = (props) => {
-  let style = {...styles.default}
-  if (props.disabled) {
-    style = {...style, ...styles.disabled}
+const ComplexButton = props => {
+  let style = { ...styles.default }
+  if (props.darkMode) {
+    style = { ...style, ...styles.darkMode }
   }
-  return (
-    <button style={style}>Complex Button</button>
-  )
+  return <button style={style}>Complex Button</button>
 }
 
 export default ComplexButton
